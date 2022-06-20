@@ -21,14 +21,19 @@ options = [
     'Spock'
 ]
 
+randompick = ','.join(random.choices(options))
+usrinput = str(input())
+
+
 def check_valid_input(input):
-    if input not in options:
+    if usrinput not in options:
         print("Invalide Input")
 
 input = input("What do you choose: ")
-return check_valid_input
+print (check_valid_input())
+
 print("You chose " + input)
-print('I choose ', ','.join(random.choices(options)))
+print('I choose ', randompick)
 
 #results =
 #print(results)
