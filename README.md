@@ -25,5 +25,6 @@ The rules are pretty simple.
 
                     (and as it always has) Rock crushes Scissors
 
+[Here in video form.](https://youtube.com/shorts/1KKD174GSpE?feature=share)
 
 Hope you have fun with it!
