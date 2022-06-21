@@ -1,16 +1,11 @@
 import random
 
 ## The first thing destroyes the second thing
-RULES = {   "Scissors": "Paper", 
-            "Paper": "Rock", 
-            "Rock": "Lizard", 
-            "Lizard": "Spock",
-            "Spock" : "Scissors",
-            "Scissors" : "Lizard",
-            "Lizard" : "Paper",
-            "Paper" : "Spock",
-            "Spock" : "Rock",
-            "Rock" : "Scissors"
+rules = {   "Scissors": ["Paper", "Lizard"], 
+            "Paper": ["Rock", "Spock"], 
+            "Rock": ["Lizard", "Scissors"], 
+            "Lizard": ["Spock", "Paper"],
+            "Spock" : ["Scissors", "Rock"],
             }
 
 options = [
@@ -21,19 +16,26 @@ options = [
     'Spock'
 ]
 
-randompick = ','.join(random.choices(options))
-usrinput = str(input())
+restart = True
+while restart == True:
+    restart = False
+    usrinput = input("What do you choose: ")
+    randompick = ','.join(random.choices(options))
 
 
-def check_valid_input(input):
     if usrinput not in options:
         print("Invalide Input")
+        restart = True
 
-input = input("What do you choose: ")
-print (check_valid_input())
-
-print("You chose " + input)
-print('I choose ', randompick)
-
-#results =
-#print(results)
+    else:
+        print("You chose " + usrinput)
+        print('I choose ', randompick)
+        restart = False    
+        if usrinput in ','.join(rules.get(randompick)):
+            print("You LOSE")
+        else:
+            if randompick == usrinput:
+                print("DRAW")
+            else:
+                print("You WIN")
+    restart = True
